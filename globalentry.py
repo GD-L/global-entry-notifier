@@ -59,11 +59,11 @@ def main():
                     appointments=[]
                 if appointments:
                     appt_datetime = datetime.strptime(appointments[0]["startTimestamp"], '%Y-%m-%dT%H:%M')
-                    message = f'An appointment was found at {appt_datetime} login to book it\n https://ttp.cbp.dhs.gov/schedulerui/'
+                    message = f'An appointment was found at {appt_datetime} for {city} login to book it\n https://ttp.cbp.dhs.gov/schedulerui/'
                     send_chat(token,chat_id,message)
                     print("Message Sent")
                 else:
-                    print("No Appointments Found")
+                    print(f"No Appointments Found for {city}")
             time.sleep(TIME_WAIT)
     except KeyboardInterrupt:
         sys.exit(0)
