@@ -1,0 +1,10 @@
+---
+version: '3'
+services: 
+    gaps:
+        image: globalentry:latest
+        container_name: globalentry
+        env_file: .env
+        restart: unless-stopped
+
+
